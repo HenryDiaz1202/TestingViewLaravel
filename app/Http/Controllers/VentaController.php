@@ -14,7 +14,8 @@ class VentaController extends Controller
      */
     public function index()
     {
-        //
+        $ventas = Venta::query()->paginate(7);
+        return view('welcome')->with('ventas',$ventas);
     }
 
     /**

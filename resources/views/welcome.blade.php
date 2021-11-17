@@ -26,6 +26,35 @@
         <div style="background-color: orangered; margin: 20px; padding: 20px;">
             <h1 style="text-align: center; color:white">EXÁMEN FINAL DE CALIDAD DE SOFTWARE</h1>
 
+            <div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Operaciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($ventas as $venta)
+                        <tr>
+                            <td>{{ $venta->id }}</td>
+                            <td>{{ $venta->nombre }}</td>
+                            <td>
+                                <form action="{{ route('profesores.destroy', $docent->id) }}" method="POST">
+                                    @csrf()
+                                    @method('DELETE')
+                                    <a href="/profesores/{{ $docent->id }}/edit" class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">Editar</a>
+                                    <button type="submit" class="border-gray-300 border-transparent rounded-lg appearance-none border border-gray-300 py-2 px-4">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                  </table>
+            </div>
+
+
         </div>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

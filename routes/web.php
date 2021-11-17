@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Venta;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('profesores','App\Http\Controllers\VentaController');
+
 Route::get('/', function () {
-    return view('welcome');
+    $ventas = Venta::query()->paginate(7);
+    return view('welcome')->with('ventas',$ventas);;
 });
