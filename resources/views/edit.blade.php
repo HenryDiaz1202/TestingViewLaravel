@@ -34,7 +34,7 @@
                 <br><br>
                 <div class="form-group">
                     <label for="exampleInputEmail1">id de la venta registrada</label><br><br>
-                    <input placeholder="" required type="text" class="form-control" name="id" value="{{ $venta->id }}" id="">
+                    <input placeholder="" required type="text" class="form-control" name="id" value="{{ $venta->id }}" id="" readonly>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Nombre</label><br><br>
