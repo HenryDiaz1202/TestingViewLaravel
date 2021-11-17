@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Venta;
 use Illuminate\Database\Seeder;
 
 class VentasSeeder extends Seeder
@@ -13,6 +14,6 @@ class VentasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Venta::factory()->count(10)->create();
     }
 }
