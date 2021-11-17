@@ -56,9 +56,10 @@ class VentaController extends Controller
      * @param  \App\Models\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Venta $venta)
+    public function edit($id)
     {
-        //
+        $venta = Venta::find($id);
+        return view('edit')->with('venta',$venta);
     }
 
     /**
@@ -70,7 +71,7 @@ class VentaController extends Controller
      */
     public function update(Request $request, Venta $venta)
     {
-        //
+        
     }
 
     /**

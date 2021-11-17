@@ -41,12 +41,7 @@
                             <td>{{ $venta->id }}</td>
                             <td>{{ $venta->nombre }}</td>
                             <td>
-                                <form action="{{ route('profesores.destroy', $docent->id) }}" method="POST">
-                                    @csrf()
-                                    @method('DELETE')
-                                    <a href="/profesores/{{ $docent->id }}/edit" class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">Editar</a>
-                                    <button type="submit" class="border-gray-300 border-transparent rounded-lg appearance-none border border-gray-300 py-2 px-4">Eliminar</button>
-                                </form>
+                                <a href="/ventas/{{ $venta->id }}/edit" class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">Editar</a>
                             </td>
                         </tr>
                     @endforeach

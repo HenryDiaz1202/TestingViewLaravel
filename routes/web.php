@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('profesores','App\Http\Controllers\VentaController');
+Route::resource('ventas','App\Http\Controllers\VentaController');
 
 Route::get('/', function () {
     $ventas = Venta::query()->paginate(7);
