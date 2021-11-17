@@ -69,9 +69,12 @@ class VentaController extends Controller
      * @param  \App\Models\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Venta $venta)
+    public function update(Request $request, $id)
     {
-        
+        $ventas = Venta::find($id);
+        $ventas->nombre=$request->get('nombre');
+        $ventas->save();
+        return redirect('/ventas');
     }
 
     /**
